@@ -15,6 +15,7 @@ set scrolloff=8
 set signcolumn=yes
 set colorcolumn=80
 
+let mapleader = " "
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-go', 'coc-eslint']
 
 call plug#begin()
@@ -37,7 +38,5 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-
-let mapleader = " "
 
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
