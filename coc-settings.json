@@ -1,3 +1,15 @@
 {
-    "eslint.autoFixOnSave": true
+    "eslint.autoFixOnSave": true,
+    "languageserver": {
+        "clojure-lsp": {
+            "command": "bash",
+            "args": ["-c", "clojure-lsp"],
+            "filetypes": ["clojure"],
+            "rootPatterns": ["project.clj"],
+            "additionalSchemes": ["jar", "zipfile"],
+            "trace.server": "verbose",
+            "initializationOptions": {
+            }
+          }
+    }
 }
