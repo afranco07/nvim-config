@@ -26,6 +26,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -48,6 +50,7 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 
 " NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -61,3 +64,8 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
 " Run on save
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+" vim-fugitive remaps
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //3<CR>
+nmap <leader>gs :G<CR>
