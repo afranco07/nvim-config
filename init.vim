@@ -10,7 +10,7 @@ set nowrap
 set ignorecase
 set smartcase
 set incsearch
-set termguicolors
+set notermguicolors
 set scrolloff=8
 set signcolumn=yes
 set colorcolumn=80
